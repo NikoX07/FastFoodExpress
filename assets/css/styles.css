@@ -1,0 +1,736 @@
+/* Estilos generales del body: fuente, fondo y color de texto */
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Evitar el desbordamiento horizontal */
+html, body {
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos del encabezado: imagen de fondo, color de texto y espaciado */
+header {
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 80px 0 120px 0;
+  text-align: center;
+  position: relative;
+  /* HEADER: ocupa todo el ancho */
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+/* Capa oscura sobre la imagen del header para mejorar la legibilidad */
+header::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  /* Capa oscura también ocupa todo el ancho */
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Posiciona el contenido del banner por encima de la capa oscura */
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Título principal del banner */
+.banner-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+/* Descripción del banner */
+.banner-content p {
+  font-size: 1.3em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contenedor de categorías de productos */
+.categories {
+  max-width: 1200px;
+  margin: -60px auto 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Tarjeta individual de cada categoría */
+.category {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 24px;
+}
+
+/* Título de cada categoría */
+.category h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #e67e22;
+}
+
+/* Lista de productos dentro de cada categoría */
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Elementos individuales de la lista de productos */
+.product-list li {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Texto de cada producto */
+.product-list span {
+  font-weight: 500;
+}
+
+/* Precio de cada producto */
+.product-list .price {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+/* Sección de razones para elegir el local */
+.why-choose {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Tarjeta individual de cada razón */
+.why-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 24px;
+  text-align: center;
+}
+
+/* Título de cada razón */
+.why-card h3 {
+  color: #e67e22;
+  margin-bottom: 0.5em;
+}
+
+/* Pie de página general */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 0 0 0;
+}
+
+/* Contenedor principal del footer */
+.footer-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-bottom: 24px;
+}
+
+/* Títulos de las secciones del footer */
+.footer-main h4 {
+  margin-top: 0;
+  color: #e67e22;
+}
+
+/* Listas del footer */
+.footer-main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Elementos individuales de las listas del footer */
+.footer-main li {
+  margin-bottom: 8px;
+}
+
+/* Copyright del footer */
+.footer-copyright {
+  text-align: center;
+  background: #181818;
+  padding: 12px 0;
+  font-size: 0.95em;
+  color: #bbb;
+}
+
+/* Título de productos */
+.productos h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+/* Barra de categorías (tabs) */
+.categorias-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.tab-btn {
+  background: #eaf6fd;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 24px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #222;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.tab-btn.active {
+  background: #4fc3f7;
+  color: #fff;
+}
+
+/* Cards de platillos */
+#platillos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.platillo-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  width: 320px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  min-height: 420px; /* Ajusta según el contenido */
+}
+
+.platillo-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.vista-360 {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #4fc3f7;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.platillo-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.platillo-card p {
+  margin: 0 0 12px 0;
+  color: #666;
+  font-size: 1em;
+}
+
+/* Contenedor para precio y botón, siempre abajo */
+.platillo-card .platillo-bottom {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.platillo-card .precio {
+  color: #4fc3f7;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.agregar-btn {
+  background: #4fc3f7;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 24px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.agregar-btn:hover {
+  background: #039be5;
+}
+
+/* Estilos para el modal 3D */
+.modal-3d {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-3d-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 95vw;
+  margin: auto;
+  padding: 32px;
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 2em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #222;
+  transition: color 0.2s;
+}
+.close-modal:hover {
+  color: #e67e22;
+}
+.viewer-3d {
+  width: 100%;
+  height: 400px;
+  background: #eaf6fd;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.controls-3d {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 18px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.controls-3d button {
+  padding: 8px 16px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  border: none;
+  background: #4fc3f7;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.controls-3d button:hover {
+  background: #039be5;
+}
+.cruceta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.cruceta > div {
+  display: flex;
+  gap: 4px;
+}
+.cruceta button,
+.zoom button {
+  padding: 8px 16px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  border: none;
+  background: #4fc3f7;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cruceta button:hover,
+.zoom button:hover {
+  background: #039be5;
+}
+.zoom {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ===============================
+   Productos (tarjetas)
+   =============================== */
+.card-producto {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  overflow: hidden;
+  margin: 18px;
+}
+.card-img { position: relative; height: 220px; overflow: hidden; }
+.card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.badge-360 {
+  position: absolute; top: 12px; left: 12px;
+  background: #40a9ff; color: #fff; font-weight: 700;
+  padding: 6px 10px; border-radius: 999px; font-size: 12px;
+}
+.card-body { padding: 16px; }
+.card-body h3 { margin: 0 0 6px; font-size: 20px; }
+.card-body p { margin: 0 0 12px; color: #555; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; }
+.card-footer .precio { color: #1e90ff; font-weight: 800; }
+.btn-agregar {
+  background: #1e90ff; color: #fff; border: none; padding: 8px 14px;
+  border-radius: 999px; cursor: pointer; font-weight: 700;
+}
+.btn-agregar:hover { filter: brightness(.95); }
+
+/* ===============================
+   Carrito flotante
+   =============================== */
+.carrito-flotante {
+  position: fixed; top: 16px; right: 16px; z-index: 1000;
+}
+.carrito-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #75c6ff; color: #fff; border: none; padding: 10px 14px;
+  border-radius: 999px; cursor: pointer; font-weight: 800; font-size: 16px;
+}
+.carrito-cantidad {
+  background: #fff; color: #1e90ff; border-radius: 999px;
+  padding: 2px 8px; font-weight: 800;
+}
+
+/* Panel lista */
+.carrito-lista {
+  position: absolute; top: 52px; right: 0;
+  width: 380px; max-height: 70vh; overflow: auto;
+  background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  padding: 14px;
+}
+.carrito-lista h3 { margin: 4px 0 12px; }
+#carrito-productos { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.carrito-vacio { padding: 16px; color: #666; text-align: center; }
+
+.carrito-item {
+  display: grid; grid-template-columns: 64px 1fr auto; gap: 10px; align-items: center;
+  border: 1px solid #eee; border-radius: 12px; padding: 8px;
+}
+.carrito-img { width: 64px; height: 64px; object-fit: cover; border-radius: 10px; }
+.carrito-info h4 { margin: 0 0 4px; font-size: 15px; }
+.carrito-precio { color: #1e90ff; font-weight: 700; margin-bottom: 6px; }
+.carrito-controles { display: inline-flex; gap: 6px; align-items: center; }
+.carrito-controles .btn-mas,
+.carrito-controles .btn-menos,
+.carrito-controles .btn-eliminar {
+  border: none; padding: 6px 10px; border-radius: 999px; cursor: pointer;
+  background: #f2f6ff; color: #1e90ff; font-weight: 800;
+}
+.carrito-controles .btn-eliminar { background: #ffeaea; color: #ff4d4f; }
+.carrito-subtotal { font-weight: 700; }
+
+.carrito-total { margin-top: 12px; }
+.carrito-total-line {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 16px; padding: 8px 0; border-top: 1px solid #eee; margin-top: 6px;
+}
+.carrito-acciones { display: flex; gap: 8px; }
+.carrito-acciones button {
+  flex: 1; border: none; padding: 10px; border-radius: 10px; cursor: pointer; font-weight: 800;
+}
+.carrito-acciones #btn-vaciar { background: #f5f5f5; color: #333; }
+.carrito-acciones .btn-pagar { background: #22c55e; color: #fff; }
+
+/* Modal de pago Nequi */
+#modal-pago {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn .3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+#modal-pago > div {
+  background: #fff;
+  padding: 30px 24px;
+  border-radius: 20px;
+  max-width: 340px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  font-family: 'Montserrat', sans-serif;
+}
+#modal-pago button#cerrar-modal-pago {
+  position: absolute; top: 10px; right: 10px;
+  background: none; border: none; font-size: 22px; cursor: pointer;
+  color: #888;
+  transition: color .2s;
+}
+#modal-pago button#cerrar-modal-pago:hover { color: #e53935; }
+#modal-pago img { box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+#modal-pago a {
+  background: #25d366;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background .2s;
+}
+#modal-pago a:hover { background: #128c7e; }
+
+/* Animación para el modal */
+#modal-pago {
+  transition: opacity .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+#modal-pago[style*="display: flex"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Animación en botones */
+button, .agregar-btn {
+  transition: background .2s, color .2s, opacity .2s;
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 900px) {
+  .categories, .why-choose, .footer-main {
+    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-choose {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+  body {
+    font-size: 1.08em;
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+  header {
+    padding: 40px 0 80px 0;
+  }
+  .banner-content h1 {
+    font-size: 1.6em;
+    margin-bottom: 0.7em;
+    letter-spacing: 0.5px;
+  }
+  .banner-content p {
+    font-size: 1.08em;
+    margin-bottom: 0.7em;
+    padding: 0 8px;
+    line-height: 1.5;
+  }
+  .productos h2 {
+    font-size: 1.3em;
+    margin-bottom: 18px;
+    padding: 0 8px;
+  }
+  .categories, .why-choose {
+    gap: 12px;
+  }
+
+  /* Tarjetas de productos más pequeñas */
+  .platillo-card,
+  .card-producto {
+    width: 88vw;
+    min-width: unset;
+    padding: 10px;
+    min-height: 220px;
+    margin: 8px 0;
+  }
+  .platillo-card img,
+  .card-img img {
+    height: 110px;
+    border-radius: 10px;
+  }
+
+  /* Tarjetas de categorías más pequeñas */
+  .category {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 12px;
+    font-size: 0.98em;
+  }
+
+  /* Carrito más compacto */
+  .carrito-lista {
+    width: 94vw;
+    padding: 6px;
+    border-radius: 14px;
+  }
+}
+
+/* ===========================
+   RESPONSIVIDAD EXTRA
+   =========================== */
+
+/* Productos y tarjetas en móviles */
+@media (max-width: 600px) {
+  #platillos-lista {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+  .platillo-card {
+    width: 95vw;
+    min-width: unset;
+    padding: 16px;
+    min-height: 340px;
+  }
+  .platillo-card img {
+    height: 160px;
+  }
+  .card-producto {
+    margin: 10px 0;
+    width: 95vw;
+  }
+  .card-img { height: 140px; }
+}
+
+/* Carrito flotante y panel en móviles */
+@media (max-width: 600px) {
+  .carrito-flotante {
+    top: 10px; right: 10px;
+  }
+  .carrito-lista {
+    position: fixed;
+    top: 60px; right: 0; left: 0;
+    width: 98vw;
+    min-width: unset;
+    border-radius: 18px;
+    padding: 10px;
+    z-index: 1001;
+  }
+}
+
+/* Modal de pago en móviles */
+@media (max-width: 600px) {
+  #modal-pago > div {
+    max-width: 95vw;
+    padding: 18px 8px;
+    border-radius: 14px;
+  }
+  #modal-pago img {
+    width: 120px;
+  }
+}
+
+/* Banner y encabezado en móviles */
+@media (max-width: 600px) {
+  header {
+    padding: 28px 0 60px 0;
+  }
+  .banner-content h1 {
+    font-size: 1.3em;
+  }
+  .banner-content p {
+    font-size: 1em;
+  }
+}
+
+/* Footer en móviles */
+@media (max-width: 600px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+  .footer-main h4 {
+    font-size: 1.1em;
+  }
+}
+
+/* Tabs de categorías en móviles */
+@media (max-width: 600px) {
+  .categorias-tabs {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .tab-btn {
+    width: 90vw;
+    font-size: 1em;
+    padding: 10px 0;
+  }
+}
+
+/* Razones para elegir en móviles */
+@media (max-width: 900px) {
+  .why-choose {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .why-card {
+    padding: 16px;
+  }
+}
+
+.mensaje-feedback {
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  animation: fadeIn .3s;
+}

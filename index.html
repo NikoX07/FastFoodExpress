@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FastFoodExpress</title>
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Scripts -->
+   <!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<!-- Firebase Database -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="assets/js/scripts.js" defer></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <link rel="icon" type="image/png" href="assets/img/iconopestaña.png">
+
+</head>
+
+  <!-- Modal de pago Nequi -->
+  <div id="modal-pago"></div>
+
+<body>
+  <!-- Carrito flotante en la esquina superior derecha -->
+  <div id="carrito-flotante" class="carrito-flotante">
+    <button id="carrito-btn" class="carrito-btn" aria-label="Ver carrito">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="carrito-cantidad" class="carrito-cantidad">0</span>
+    </button>
+    <div id="carrito-lista" class="carrito-lista" style="display:none;">
+      <h3>Mi Carrito</h3>
+      <ul id="carrito-productos"></ul>
+      <div id="carrito-total" class="carrito-total"></div>
+    </div>
+  </div>
+  <!-- Encabezado principal con banner -->
+  <header>
+    <div class="banner-content">
+      <!-- Título del sitio -->
+      <h1>FastFood Express</h1>
+      <!-- Descripción del sitio -->
+      <p>Hamburguesas clasicas y de platano, perros calientes sencillos y especiales, empanadas y pasteles tradicionales. Explora cada producto con modelos 3D interactivos desde todas las caras.</p>
+      <p>¡Paga facil con Nequi o con efectivo!</p>
+    </div>
+  </header>
+  
+  <!-- Sección de productos con filtro por categorías -->
+  <section class="productos">
+    <!-- Título principal -->
+    <h2>Nuestros Productos</h2>
+    
+    <!-- Barra de categorías (tabs) -->
+    <div class="categorias-tabs">
+      <button class="tab-btn active" data-categoria="hamburguesas">🍔 Hamburguesas</button>
+      <button class="tab-btn" data-categoria="perros">🌭 Perros Calientes</button>
+      <button class="tab-btn" data-categoria="empanadas">🥟 Empanadas</button>
+      <button class="tab-btn" data-categoria="pasteles">🥧 Pasteles</button>
+    </div>
+    
+    <!-- Contenedor de platillos filtrados -->
+    <div id="platillos-lista">
+      <!-- Aquí se mostrarán los platillos según la categoría seleccionada -->
+    </div>
+  </section>
+  
+  <!-- Sección de razones para elegir el local -->
+  <section class="why-choose">
+    <!-- Razón 1 -->
+    <div class="why-card">
+      <i class="fas fa-cube why-icon"></i> <!-- Icono 3D -->
+      <h3>Modelos 3D interactivos</h3>
+      <p>Rota, gira y explora cada producto desde todas las caras con nuestros modelos 3D avanzados.</p>
+    </div>
+    <!-- Razón 2 -->
+    <div class="why-card">  
+      <i class="fas fa-mobile-alt why-icon"></i> <!-- Icono Nequi -->
+      <h3>Pago con Nequi</h3>
+      <p>Paga de forma rapida y segura con Nequi. Solo necesita tu numero de celular.</p>
+    </div>
+    <!-- Razón 3 -->
+    <div class="why-card">
+      <i class="fas fa-bolt why-icon"></i> <!-- Icono rápido -->
+      <h3>Entrega Rapida</h3>
+      <p>Preparamos tu pedido al momento para que disfrutes de comida fresca y caliente.</p>
+    </div>
+    <!-- Razón 4 -->
+    <div class="why-card">
+      <i class="fas fa-heart why-icon"></i> <!-- Icono corazón -->
+      <h3>Sabores Autenticos</h3>
+      <p>Recetas tradicionales colombianas con ingredientes frescos y de calidad.</p>
+    </div>
+  </section>
+  
+  <!-- Modal para modelo 3D -->
+  <div id="modal-3d" class="modal-3d" style="display:none;">
+    <div class="modal-3d-content">
+      <!-- Equís mejorada para cerrar -->
+      <button class="close-modal" id="close-modal-btn" aria-label="Cerrar">&times;</button>
+      <h2 id="modal-3d-title"></h2>
+      <!-- Espacio para el modelo 3D -->
+      <div id="viewer-3d" class="viewer-3d"></div>
+      <!-- Características y detalles -->
+      <div id="modal-3d-details"></div>
+    </div>
+  </div>
+
+
+  <!-- Pie de página -->
+  <footer>
+    <div class="footer-main">
+      <!-- Sección: Sobre Nosotros -->
+      <div>
+        <h4>Sobre Nosotros</h4>
+        <p>Los mejores sabores tradicionales colombianos con tecnologia 3D interactiva y pagos faciles con Nequi.</p>
+      </div>
+      <!-- Sección: Contacto -->
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+             +57 310 511 8265</li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            nicopasaje2007@outlook.com</li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i> Calle 123 #45-67, Neiva</li>
+        </ul>
+      </div>
+      <!-- Sección: Horarios -->
+      <div>
+        <h4>Horarios</h4>
+        <ul>
+          <li>Lunes a Viernes: 8:00 am - 12:00 am</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Copyright del footer -->
+    <div class="footer-copyright">
+      &copy; 2025 FastFood Express. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>
