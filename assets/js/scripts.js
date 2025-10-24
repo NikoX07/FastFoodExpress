@@ -35,7 +35,7 @@ const platillos = {
     {
       nombre: "Perro Clásico",
       descripcion: "Salchicha, pan, salsa casera, papas ripi y cebolla deshilachada.",
-      precio: "$2.500",
+      precio: "$3.000",
       imagen: "assets/img/perro.png",
       vista: true,
       modelo3d :"assets/models/PerroCaliente.glb"
@@ -45,7 +45,7 @@ const platillos = {
     {
       nombre: "Empanada de Carne",
       descripcion: "Carne desmechada",
-      precio: "$1.200",
+      precio: "$1.500",
       imagen: "assets/img/empanadas.png",
       vista: true,
       modelo3d: "assets/models/Empanada.glb"
@@ -55,7 +55,7 @@ const platillos = {
     {
       nombre: "Pastel de Carne",
       descripcion: "Carne desmechada y arroz.",
-      precio: "$1.800",
+      precio: "$2.000",
       imagen: "assets/img/pasteldecarne.png",
       vista: true,
       modelo3d: "assets/models/PastelCarne.glb"
@@ -430,4 +430,5 @@ async function descontarStockAlPagar() {
     })
   ));
   return !sinStock;
+
 }
